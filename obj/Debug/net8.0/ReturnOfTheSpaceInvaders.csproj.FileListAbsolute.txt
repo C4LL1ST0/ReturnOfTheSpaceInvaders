@@ -1,0 +1,14 @@
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/bin/Debug/net8.0/ReturnOfTheSpaceInvaders
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/bin/Debug/net8.0/ReturnOfTheSpaceInvaders.deps.json
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/bin/Debug/net8.0/ReturnOfTheSpaceInvaders.runtimeconfig.json
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/bin/Debug/net8.0/ReturnOfTheSpaceInvaders.dll
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/bin/Debug/net8.0/ReturnOfTheSpaceInvaders.pdb
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ReturnOfTheSpaceInvaders.GeneratedMSBuildEditorConfig.editorconfig
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ReturnOfTheSpaceInvaders.AssemblyInfoInputs.cache
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ReturnOfTheSpaceInvaders.AssemblyInfo.cs
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ReturnOfTheSpaceInvaders.csproj.CoreCompileInputs.cache
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ReturnOfTheSpaceInvaders.dll
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/refint/ReturnOfTheSpaceInvaders.dll
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ReturnOfTheSpaceInvaders.pdb
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ReturnOfTheSpaceInvaders.genruntimeconfig.cache
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ref/ReturnOfTheSpaceInvaders.dll
