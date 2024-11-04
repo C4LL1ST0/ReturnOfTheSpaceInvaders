@@ -13,13 +13,13 @@ struct Position{
 }
 
 class Object{
-    public double id;
+    
     public int hp;
     public string shape;
     public Position position;
 
-    public Object(double id, int hp, string shape, Position position){
-        this.id = id;
+    public Object(int hp, string shape, Position position){
+        
         this.hp = hp;
         this.shape = shape;
         this.position = position;
@@ -35,7 +35,7 @@ class Player : Object{
     public int damage = 1;
     
     
-    public Player() : base(0d, 3, "@", new Position(0, 0)){}
+    public Player() : base( 3, "@", new Position(0, 0)){}
 
     public void MoveLeft(){
         if(position.yPos>0){
@@ -54,7 +54,7 @@ class Player : Object{
 class Enemy : Object {
     public int damage = 1;
 
-    public Enemy(double id, Position position) : base(id, 1, "#", position){
+    public Enemy(Position position) : base(1, "#", position){
         this.position = position;
     }
 }
@@ -107,7 +107,7 @@ class Shot : Object{
     public bool mine;
     public int damage = 1;
 
-    public Shot(double id, Position position, bool mine) : base(id, 1, "|", position){
+    public Shot(Position position, bool mine) : base(1, "|", position){
         this.position = new Position(position.xPos, position.yPos);
         this.mine = mine;
     }

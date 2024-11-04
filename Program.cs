@@ -1,16 +1,13 @@
 ﻿class Program
-{
+{   
+    static int screenWidth = 50;
+    static int screenHeigth = 20;
     public static void Main()
     {
         Player player = new();
 
-        Enemy e1 = new(1d, new Position(10, 3));
-        Enemy e2 = new(2d, new Position(10, 42));
-        Enemy e3 = new(3d, new Position(10, 15));
-        List<Enemy> enemyList = new List<Enemy> { e1, e2, e3 };
-
-        Hive hive = new Hive(enemyList);
-        Screen screen = new Screen(hive, player);
+        Hive hive = new Hive(PopulateEnemyList(screenWidth, screenHeigth, 3));
+        Screen screen = new Screen(hive, player, screenWidth, screenHeigth);
 
 
         ConsoleKeyInfo keyInfo;
@@ -26,16 +23,13 @@
                 {
                     case ConsoleKey.LeftArrow:
                         player.MoveLeft();
-                        screen.UpdateScreenContent();
                         break;
 
                     case ConsoleKey.RightArrow:
                         player.MoveRight();
-                        screen.UpdateScreenContent();
                         break;
                     case ConsoleKey.Spacebar:
                         screen.Shoot(true);
-                        screen.UpdateScreenContent();
                         break;
                     case ConsoleKey.Escape:
                         gameRunning = false;
@@ -45,8 +39,39 @@
 
             screen.UpdateScreenContent();
             screen.Show();
-            Thread.Sleep(80);
+            Thread.Sleep(100);
 
         }
+     
+    }
+
+    public static List<Enemy> PopulateEnemyList(int screenWidth, int screenHeigth, int hiveHeigth){
+        int lineLength = (int)(screenWidth - 3*screenWidth/5);
+        lineLength += lineLength%2==0 ? 0 : 1;
+        int startingDistance = screenWidth/2 - lineLength/2;
+        
+        hiveHeigth *= 2;
+        int startingHeight = screenHeigth - hiveHeigth - 1;
+
+        List<Enemy> enemyList = new();
+        
+        bool jmpFirstPos = false;
+        for(int i = startingHeight; i < hiveHeigth+startingHeight; i+=2){
+            if(jmpFirstPos){
+                for(int j = startingDistance; j < lineLength+startingDistance; j+=2){
+                    Enemy e = new(new Position(i, j));
+                    enemyList.Add(e);
+                }
+                jmpFirstPos = false;
+            }else{
+                for(int j = startingDistance-1; j < lineLength+startingDistance; j+=2){
+                    Enemy e = new(new Position(i, j));
+                    enemyList.Add(e);
+                }
+                jmpFirstPos = true;
+            }
+            
+        }
+        return enemyList;
     }
 }

@@ -12,3 +12,4 @@
 /home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ReturnOfTheSpaceInvaders.pdb
 /home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ReturnOfTheSpaceInvaders.genruntimeconfig.cache
 /home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ref/ReturnOfTheSpaceInvaders.dll
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ReturnOfTheSpaceInvaders.sourcelink.json

@@ -2,20 +2,25 @@ using System.Data.Common;
 
 class Screen
 {
-    public string[,] screen = new string[20, 50];
+    
     public Hive hive;
     public Player player;
     public List<Shot> shots = new();
+    public int screenWidth;
+    public int screenHeight;
+    public string[,] screen;
 
-    public Screen(Hive hive, Player player)
+
+    public Screen(Hive hive, Player player, int screenWidth, int screenHeight)
     {
         this.hive = hive;
         this.player = player;
+        this.screenWidth = screenWidth;
+        this.screen = new string[screenHeight, screenWidth];
     }
 
     private void ClearScreen()
     {
-        // Clear the screen array
         for (int i = 0; i < screen.GetLength(0); i++)
         {
             for (int j = 0; j < screen.GetLength(1); j++)
@@ -30,13 +35,14 @@ class Screen
 
     private void Tick(){
         tickCount++;
-        shots = shots.Where(shot => shot.position.xPos < 19 && shot.position.xPos > 0).ToList();
+        shots = shots.Where(shot => shot.position.xPos < 19 && shot.position.xPos > 0).ToList(); //filter shots
         if (tickCount%tickSpeed == 0)
         {
             tickCount = 0;
             return;
         }
 
+        //move shots
         for (int i = 0; i < shots.Count; i++ )
         {   
             if (shots[i].mine){
@@ -46,12 +52,14 @@ class Screen
             }
         }
 
+        //check hits
         foreach(var shot in shots){
             foreach (var enemy in hive.enemyList)
             {
-                if(shot.position.xPos == enemy.position.xPos && shot.position.yPos == enemy.position.yPos){
+                if(shot.position.xPos == enemy.position.xPos && shot.position.yPos == enemy.position.yPos && shot.mine){
                     enemy.OnHit(shot.damage);
                     shot.OnHit(1);
+                    player.score += 5;
                 }
             }
         }
@@ -70,8 +78,8 @@ class Screen
     {
         ClearScreen();
         
-
         Tick();
+
         screen[player.position.xIndex, player.position.yIndex] = player.shape;
         
         foreach (var enemy in hive.enemyList)
@@ -89,7 +97,7 @@ class Screen
     {
         Console.Clear();
         UpdateScreenContent();
-
+        Console.WriteLine(("SCORE: "  + player.score.ToString()).PadRight(25) + ("HP: " + player.hp.ToString()).PadLeft(25));
         for (int i = 0; i < screen.GetLength(0); i++)
         {
             for (int j = 0; j < screen.GetLength(1); j++)
@@ -101,10 +109,7 @@ class Screen
     }
 
     public void Shoot(bool isMine){
-        Random r = new Random();
-        double f = r.Next();
-        double id = tickCount / f;
-        Shot shot = new Shot(id, new Position(player.position.xPos+1, player.position.yPos), isMine);
+        Shot shot = new Shot(new Position(player.position.xPos+1, player.position.yPos), isMine);
         shots.Add(shot);
     }
 
