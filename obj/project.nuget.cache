@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "aFvduSAoKnU=",
+  "dgSpecHash": "0AmCwyejqCc=",
   "success": true,
   "projectFilePath": "/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/ReturnOfTheSpaceInvaders.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/stepan/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -13,3 +13,6 @@
 /home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ReturnOfTheSpaceInvaders.genruntimeconfig.cache
 /home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ref/ReturnOfTheSpaceInvaders.dll
 /home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ReturnOfTheSpaceInvaders.sourcelink.json
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/bin/Debug/net8.0/Newtonsoft.Json.dll
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ReturnOfTheSpaceInvaders.csproj.AssemblyReference.cache
+/home/stepan/prg/cs/ReturnOfTheSpaceInvaders/obj/Debug/net8.0/ReturnOf.9E540E07.Up2Date
