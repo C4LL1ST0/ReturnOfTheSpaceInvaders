@@ -61,6 +61,8 @@ class Program
             {
                 gameRunning = false;
                 File.Delete("gameSave.json");
+                Console.Clear();
+                Console.WriteLine("You lost.");
             }
 
             if (screen.hive.defeated)
