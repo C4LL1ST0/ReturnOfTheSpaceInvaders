@@ -129,42 +129,6 @@ class Hive
 
     }
 
-    public List<Enemy> PopulateEnemyList(int screenWidth, int screenHeigth, int hiveHeigth)
-    {
-        int lineLength = (int)(screenWidth - 3 * screenWidth / 5);
-        lineLength += lineLength % 2 == 0 ? 0 : 1;
-        int startingDistance = screenWidth / 2 - lineLength / 2;
-
-        hiveHeigth *= 2;
-        int startingHeight = screenHeigth - hiveHeigth - 1;
-
-        List<Enemy> enemyList = new();
-
-        bool jmpFirstPos = false;
-        for (int i = startingHeight; i < hiveHeigth + startingHeight; i += 2)
-        {
-            if (jmpFirstPos)
-            {
-                for (int j = startingDistance; j < lineLength + startingDistance; j += 2)
-                {
-                    Enemy e = new(new Position(i, j));
-                    enemyList.Add(e);
-                }
-                jmpFirstPos = false;
-            }
-            else
-            {
-                for (int j = startingDistance - 1; j < lineLength + startingDistance; j += 2)
-                {
-                    Enemy e = new(new Position(i, j));
-                    enemyList.Add(e);
-                }
-                jmpFirstPos = true;
-            }
-
-        }
-        return enemyList;
-    }
 
     private void SortEnemyList()
     {

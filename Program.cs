@@ -126,8 +126,7 @@ class Program
         {
             case "1":
                 File.Delete("gameSave.json");
-                screen.player = new Player();
-                screen.hive = new Hive(PopulateEnemyList(screenWidth, screenHeigth, hiveHeigth));
+                screen = new Screen(new Hive(PopulateEnemyList(screenWidth, screenHeigth, hiveHeigth)), new Player(), screenWidth, screenHeigth);
                 gameRunning = true;
                 break;
             case "2":
